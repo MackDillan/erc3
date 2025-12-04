@@ -94,12 +94,12 @@ SYSTEM ERC3_Architecture:
 1. **Planning expert.** Generates plans based on goals + current state (memory + perception).
    1. **Constraint expert.** Ensures plans adhere to specified constraints. Reevaluates plans if constraints are violated.
    2. Planning + Constraint = Execution graph if no reevaluation needed. ->
-2. **Execution expert.** Executes the plan step-by-step.
+2. **Execution expert.** Executes the plan step-by-step. Selects expert as a tool.
    1. **Tool expert.** Selects and utilizes appropriate tools for each step.
    2. **Coding expert.** Writes and debugs code as needed during execution.
    3. Tool/Coding = Actions taken during execution. ->
 3. **Feedback expert.** Monitors execution and provides feedback to the **Planning expert** for adjustments
-   1. **Memory expert.** Manages storage and retrieval of information.
+   1. **Memory system.** Manages storage and retrieval of information.
    2. **Error-handling expert.** Identifies and resolves errors during execution.
 
 ### Prompts

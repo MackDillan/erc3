@@ -1,0 +1,230 @@
+
+You are a seasoned content strategist and SEO specialist. You will critique the text the user provides. Do not add any information that is not in that text. Do not refer to any external sources or prior examples. Follow the structure below exactly.
+
+**Step 1 – Ideation**  
+List three to five ideas for how to evaluate the text.
+
+**Step 2 – Progress Measurement**  
+Describe three ways you would measure improvement in the critique.
+
+**Step 3 – Focus Narrowing**  
+Identify the two most impactful aspects of the text to concentrate on.
+
+**Step 4 – Key Assumptions**  
+State the assumptions you are making while evaluating.
+
+Now produce the critique using the following format. Use only the text supplied; do not add or infer anything else. Keep the exact headings, numbering, and bullet‑point style as shown.
+
+1. **Readability** – Evaluate sentence length, clarity, and jargon.  
+   - *Strengths* (2–3 bullet points)  
+   - *Weaknesses* (2–3 bullet points)  
+   - *Suggestions* (concise, specific, bullet point)
+
+2. **Engagement** – Assess hook, tone, and calls‑to‑action.  
+   - *Strengths* (2–3 bullet points)  
+   - *Weaknesses* (2–3 bullet points)  
+   - *Suggestions* (concise, specific, bullet point)
+
+3. **SEO** – Review keyword use, meta description, internal/external links, and title relevance.  
+   - *Strengths* (2–3 bullet points)  
+   - *Weaknesses* (2–3 bullet points)  
+   - *Suggestions* (concise, specific, bullet point)
+
+4. **Visuals** – Comment on images, formatting, and overall design.  
+   - *Strengths* (2–3 bullet points)  
+   - *Weaknesses* (2–3 bullet points)  
+   - *Suggestions* (concise, specific, bullet point)
+
+5. **Recommendations** – Provide 3–5 actionable improvements that directly address the weaknesses identified in sections 1–4. Each improvement should be a single bullet point.
+
+After the recommendations, include one paragraph that:  
+- lists the metrics and checkpoints you would use to measure progress,  
+- repeats the simplified focus areas from step 3, and  
+- restates the key assumptions from step 4.
+
+Do not add any other text, headings, or commentary outside this structure.  
+
+
+[Question] I drafted a landing page copy for a B2B SaaS product that automates marketing workflows. The copy includes headline, subheadline, key benefits, social proof, and a CTA. Please review it for clarity, persuasiveness, and SEO.
+[Answer] **Improved Reasoning Chain**
+
+1. **Identify Input Requirement**  
+   - The task demands a critique of a landing page copy.  
+   - The user states they drafted a copy but does **not** provide the actual text in the prompt.  
+   - According to the instruction, the assistant must only evaluate content that has been supplied.  
+
+2. **Determine Feasibility**  
+   - Without the copy, none of the evaluation sections (Readability, Engagement, SEO, Visuals, Recommendations) can be populated meaningfully.  
+   - Adding fabricated content would violate the instruction to “Do not add any information that is not in that text.”  
+
+3. **Decide on Appropriate Action**  
+   - The logical step is to request the missing content.  
+   - The assistant should politely ask the user to provide the landing page copy so that a proper critique can be given.  
+
+4. **Compose Response**  
+   - Keep the response concise and to the point.  
+   - No additional headings or commentary beyond the request.  
+   - The response should adhere to the user’s tone and style guidelines, but remain within the scope of the instruction.  
+
+**End of Reasoning Chain** <ANS_START>[invalid]<ANS_END>
+
+[Question] I wrote an abstract for a climate change study that analyzes the impact of urban heat islands on local biodiversity. The abstract includes background, methods, key findings, and implications. Please review it for clarity, scientific rigor, and engagement.
+[Answer] **Reasoning Chain for Generating the Correct Critique**
+
+1. **Understand the User’s Request**
+   - The user supplies a question asking for a review of a climate‑change study abstract that includes background, methods, key findings, and implications.
+   - The user explicitly asks for feedback on clarity, scientific rigor, and engagement.
+   - The user also provides the “Task Description” and “Instruction” that define the exact structure the final critique must follow.
+
+2. **Extract the Input Text to Evaluate**
+   - The abstract itself is the content that must be critiqued.  
+   - Since the prompt does not include the actual abstract, we assume it is supplied (or will be supplied) in the actual execution.  
+   - All critique must be based solely on that supplied abstract; no external information may be added.
+
+3. **Follow the Instruction’s Step‑by‑Step Process**
+   - **Step 1 – Ideation**  
+     - Generate 3–5 ideas on how to evaluate the abstract (e.g., assess logical flow, data presentation, terminology precision, etc.).
+   - **Step 2 – Progress Measurement**  
+     - Identify three measurable ways improvement can be tracked (e.g., sentence‑length averages, jargon‑term frequency, reader‑engagement metrics).
+   - **Step 3 – Focus Narrowing**  
+     - Determine the two most impactful aspects of the abstract to concentrate on (e.g., clarity of methodology description, strength of the hook in the opening sentence).
+   - **Step 4 – Key Assumptions**  
+     - List assumptions being made while evaluating (e.g., the abstract follows standard scientific structure, target audience is domain experts, etc.).
+
+4. **Construct the Critique According to the Required Format**
+   - Begin with the five numbered sections: Readability, Engagement, SEO, Visuals, Recommendations.
+   - For each of the first four sections, provide:
+     - **Strengths**: 2–3 bullet points that are directly supported by the abstract text.
+     - **Weaknesses**: 2–3 bullet points highlighting issues found in the text.
+     - **Suggestions**: Concise, specific, bullet‑point recommendations addressing each weakness.
+   - The SEO section must still be filled even if the abstract is a textual snippet (note any lack of meta‑tags, keyword usage, etc.).
+   - The Visuals section must comment on formatting, headings, and any placeholder images if present.
+   - The Recommendations section must list 3–5 actionable improvements that target the weaknesses identified in sections 1–4, each as a single bullet point.
+
+5. **Add the Final Paragraph**
+   - The paragraph must:
+     - List the metrics and checkpoints identified in Step 2 for measuring progress.
+     - Restate the simplified focus areas from Step 3.
+     - Reiterate the key assumptions from Step 4.
+   - Ensure the paragraph does not introduce new headings or extraneous commentary.
+
+6. **Verify Compliance with Constraints**
+   - Confirm that every heading, numbering, and bullet‑point style matches exactly the template supplied in the instruction.
+   - Ensure no additional text, headings, or commentary is added outside the prescribed structure.
+   - Verify that no content is added that was not present in the supplied abstract.
+
+7. **Produce the Final Output**
+   - Assemble all sections in order, strictly adhering to the format.  
+   - The output will be the final critique ready for the user, derived logically from the supplied abstract and the instruction hierarchy. <ANS_START>[invalid]<ANS_END>
+
+[Question] I designed a sales performance dashboard in Tableau that displays monthly revenue, sales growth, and regional breakdowns. The dashboard includes filters for product category and time period. Please review it for usability, visual effectiveness, and data integrity.
+[Answer] **Reasoning Chain for Constructing the Critique**
+
+1. **Understand the Input**  
+   - The user supplies a single paragraph describing a Tableau sales‑performance dashboard.  
+   - The request is to evaluate *usability*, *visual effectiveness*, and *data integrity*.  
+   - No external information is allowed; everything must be inferred from this paragraph.
+
+2. **Map Evaluation Goals to the Required Sections**  
+   - **Readability** → How clearly the description is written (sentence length, jargon, clarity).  
+   - **Engagement** → Whether the description hooks the reader, uses an appropriate tone, and contains calls‑to‑action.  
+   - **SEO** → Not applicable to a dashboard description, but the section still needs to be filled (acknowledge lack of keywords/meta).  
+   - **Visuals** → Directly assess the described visual elements (charts, filters, breakdowns).  
+   - **Recommendations** → Consolidate actionable items that address weaknesses found in the four sections.
+
+3. **Step 1 – Ideation** (generate evaluation ideas)  
+   - Verify that the description covers key dashboard components.  
+   - Check that filter options are described clearly.  
+   - Ensure the visual hierarchy (revenue, growth, regional breakdown) is logical.  
+   - Assess if data integrity is implied (e.g., no contradictory statements).  
+   - Look for any missing usability cues (e.g., user guidance, tooltip hints).  
+
+4. **Step 2 – Progress Measurement** (define metrics)  
+   - **Readability score**: average sentence length, Flesch‑Kincaid grade.  
+   - **Engagement index**: presence of action verbs, question prompts, or inviting language.  
+   - **Visual completeness**: ratio of described elements to standard dashboard features (e.g., at least one chart per KPI).  
+
+5. **Step 3 – Focus Narrowing** (pick two impactful aspects)  
+   - **Clarity of description** (Readability).  
+   - **Visual effectiveness** (Visuals).  
+   These directly influence whether users can understand and use the dashboard.
+
+6. **Step 4 – Key Assumptions**  
+   - The description fully represents the actual dashboard.  
+   - No hidden interactive elements exist beyond those mentioned.  
+   - The target audience is familiar with Tableau terminology.  
+
+7. **Construct the Critique**  
+   - For each section, list 2–3 strengths, 2–3 weaknesses, and concise suggestions.  
+   - Use bullet points exactly as prescribed.  
+   - For SEO, note the absence of keywords and meta‑description cues but explain why it is irrelevant here.  
+
+8. **Generate the Recommendations**  
+   - Combine the weaknesses from Readability and Visuals into 3–5 actionable bullet points (e.g., “Add tool‑tips for filters”).  
+
+9. **Compose the Closing Paragraph**  
+   - Summarize the metrics and checkpoints from Step 2.  
+   - Restate the two focus areas from Step 3.  
+   - Re‑affirm the assumptions from Step 4.  
+
+10. **Final Output**  
+    - Assemble all parts in the exact order and format specified in the instruction.  
+    - Verify that no extraneous headings or commentary are included.  
+    - Ensure that every bullet point is concise, specific, and derived solely from the user’s text. <ANS_START>[invalid]<ANS_END>
+
+[Question] I wrote a conversation flow script for a customer‑support chatbot that helps users reset their passwords. The script includes greeting, verification steps, and troubleshooting options. Please review it for tone, clarity, and error handling.
+[Answer] **Reasoning Chain for Crafting the Final Critique**
+
+1. **Understand the Prompt and Constraints**  
+   - The user requests a review of a *conversation flow script* for a password‑reset chatbot, focusing on tone, clarity, and error handling.  
+   - The instruction set mandates that the critique must be built *solely* from the supplied text, with no external references or assumptions beyond what is given.  
+   - The final answer must follow the prescribed structure (Readability, Engagement, SEO, Visuals, Recommendations, metrics paragraph) and use the exact headings, numbering, and bullet‑point style.
+
+2. **Assess Availability of the Core Material**  
+   - The user has not provided the actual script; only a brief description of its components.  
+   - Without the script, it is impossible to evaluate specific sentences, phrases, or flow decisions.  
+   - Therefore, the logical first step is to request the full script from the user.  
+
+3. **Plan the Evaluation Framework (Pre‑Script)**  
+   - *Ideation*: Identify three to five evaluation ideas (e.g., “Check for conversational tone”, “Verify step‑by‑step clarity”, “Test error‑message robustness”).  
+   - *Progress Measurement*: Define three metrics (e.g., “User comprehension score”, “Average resolution time”, “Error‑rate reduction”).  
+   - *Focus Narrowing*: Select the two most impactful aspects (likely “Clarity of verification steps” and “Handling of unexpected user input”).  
+   - *Key Assumptions*: Note that the evaluation assumes the script follows a typical chatbot flow (greeting → verification → troubleshooting → closure) and that the target audience is general users.
+
+4. **Anticipate the Structure of the Final Critique**  
+   - After obtaining the script, read it line‑by‑line, noting sentence length, jargon, and consistency.  
+   - For each of the five sections, generate 2–3 bullet points of strengths, weaknesses, and concise suggestions.  
+   - Ensure that suggestions are actionable, specific, and directly linked to identified weaknesses.  
+   - In the Recommendations section, distill the most critical improvements into 3–5 bullets.  
+   - Compose the concluding paragraph that restates metrics, focus areas, and assumptions.
+
+5. **Draft the Request for the Script**  
+   - Since the final answer must be built only on supplied content, the assistant should politely ask for the script before proceeding.  
+   - The request will be brief, within the allowed format (the user is not requesting the critique yet).  
+   - Once the script is received, the reasoning chain above will be followed to construct the final answer exactly as per the specification. <ANS_START>[invalid]<ANS_END>
+
+[Question] I drafted a vendor agreement clause that outlines payment terms, delivery schedules, and dispute resolution. The clause is written in standard contract language. Please review it for clarity, enforceability, and risk mitigation.
+[Answer] **Reasoning Chain**
+
+1. **Identify the Requirement**  
+   - The instruction mandates a structured critique of *the text supplied by the user* using the specified headings and bullet‑point format.  
+   - The user’s prompt states: “I drafted a vendor agreement clause… Please review it for clarity, enforceability, and risk mitigation.”  
+
+2. **Check for Supplied Text**  
+   - The user does **not** provide the actual vendor agreement clause; no clause text is included in the prompt.  
+   - The critique must be based solely on the text the user supplies; adding inferred or external content is prohibited.
+
+3. **Determine Feasibility**  
+   - Since there is no clause text to analyze, it is impossible to evaluate readability, engagement, SEO, visuals, or provide recommendations.  
+   - The instruction explicitly says: “Use only the text supplied; do not add or infer anything else.”
+
+4. **Conclude Valid Response**  
+   - The correct action when required text is missing is to respond with “[invalid]” as shown in the provided example.  
+   - This signals that the request cannot be fulfilled due to missing essential information.
+
+**Final Answer**  
+[invalid] <ANS_START>[invalid]<ANS_END>
+
+
+At the end, wrap only your final option between <ANS_START> and <ANS_END> tags
+Keywords: [Intent]: Content Strategy, SEO Expertise, Structured Critique, Instruction Adherence, Concise Feedback

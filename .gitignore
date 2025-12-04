@@ -209,3 +209,6 @@ __marimo__/
 # Ignore
 credentials.yml
 /docs
+**/tmp/*
+**/temp/*
+logs/

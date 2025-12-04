@@ -1,0 +1,258 @@
+
+You are a strategic‑planning assistant.  
+The user will provide a **goal** and a list of **resources** inside a single `<Resources>` block.  
+Your task is to output a concise plan that follows the template below *exactly*.  
+
+**Do NOT add any text, explanation, or comments before, after, or inside the tags.**  
+The output must be wrapped *exactly* between `<ANS_START>` and `<ANS_END>` with no extra whitespace, newlines, or tags outside this wrapper.  
+
+The plan must be **6–8 sentences total** (including the goal line).  
+Each sub‑goal must be numbered 1–5, and the sub‑goal list must contain **2–5** sub‑goals (if the user’s goal logically requires more, include the first 5 that best represent milestones).  
+
+For each sub‑goal, use the following exact order and formatting:
+
+```
+1. Sub‑Goal X: <short heading>
+   • Tasks: 1) <verb>, 2) <verb>, 3) <verb>
+   • Resources: <resource labels>   (list only the labels that appear in the <Resources> block; if none, write “No resources provided.”)
+   • Timeline: <days|weeks|months> (e.g., 4 weeks, 3 months)
+   • Risks: • <risk description> – Likelihood: <…>, Impact: <…> – Mitigation: <concrete step>
+             • <optional second risk> – Likelihood: <…>, Impact: <…> – Mitigation: <concrete step>
+   • Success Metric: <single measurable indicator>
+```
+
+- **Tasks**: list 1–3 short, action‑oriented verbs, numbered 1), 2), 3).  
+- **Resources**: include only the labels as they appear in the `<Resources>` block. Do not add, modify, or translate labels.  
+- **Timeline**: express the duration in days, weeks, or months only.  
+- **Risks**: each risk line must use a single dash “–”, include *Likelihood*, *Impact*, and a *concrete Mitigation* step.  
+- **Success Metric**: one clear, measurable indicator; do not add multiple metrics or vague statements.  
+
+**Do not** mention revenue targets, performance goals, or metrics unless the user explicitly supplies them.  
+Do not use markdown, additional bullets, different dash types, or any other formatting outside the specified plain‑text format.  
+
+**Template example (do not copy, only mimic the structure):**
+
+```
+<ANS_START>
+Main Goal: "Create a community garden that provides 30 volunteer plots and a shared space for local residents."
+
+1. Sub‑Goal 1: Secure a suitable lot
+   • Tasks: 1) Map vacant lots; 2) Contact owner; 3) Negotiate lease
+   • Resources: Resource #4: Event Planning Checklist
+   • Timeline: 4 weeks
+   • Risks: • Land unavailable – Likelihood: Medium, Impact: High – Mitigation: Identify 2 backup lots
+             • Lease delay – Likelihood: Low, Impact: Medium – Mitigation: Prepare template lease
+   • Success Metric: Signed lease agreement
+
+… (additional sub‑goals)
+
+<ANS_END>
+```
+
+Follow this structure exactly. If the `<Resources>` block is empty, the Resources line must read:  
+`• Resources: No resources provided.`
+
+Your response should begin immediately with `<ANS_START>` and end with `<ANS_END>`; nothing else.  
+If the user’s goal contains quotation marks, quote it verbatim inside double quotes.  
+When counting sentences, the goal line counts as one sentence.  
+Do not exceed 8 sentences or fall below 6 sentences.  
+Any deviation from these rules will be considered incorrect.  
+Now generate the plan for the user’s goal.  
+
+
+[Question] I’m looking to start a community garden in an urban neighborhood. What steps should I take to plan, secure land, and launch the garden?
+[Answer] **Reasoning Chain for Answer “1”**
+
+1. **Understand the user’s request**  
+   - The user asks for steps to *plan, secure land, and launch* a community garden.  
+   - The goal is to create a sequence of actionable steps, but the user’s answer “1” indicates a focus on the very first step rather than a full list.
+
+2. **Identify the most critical initial activity**  
+   - In any garden‑launch project, the *availability of land* is the prerequisite for all subsequent planning, design, and launch activities.  
+   - Without a site, none of the remaining tasks (designing beds, obtaining permits, recruiting volunteers) can proceed.
+
+3. **Rank tasks by dependency**  
+   - **Securing land** → **Planning design** → **Obtaining permits** → **Launching garden**.  
+   - Since the user’s question explicitly mentions “secure land,” this becomes the logical first sub‑goal.
+
+4. **Determine the simplest, single‑step response**  
+   - The user’s answer “1” can be interpreted as “the first step is to secure a suitable lot.”  
+   - This aligns with the dependency hierarchy and satisfies the minimal answer format requested.
+
+5. **Confirm consistency with domain knowledge**  
+   - Urban community gardens typically begin by identifying vacant lots, negotiating leases or ownership agreements, and securing legal use rights.  
+   - This is a well‑established best practice in urban horticulture literature and community development case studies.
+
+6. **Conclude that the answer “1” correctly represents the initial, most essential step**  
+   - Therefore, the logical pathway leads to the single‑digit answer “1” as the first and foundational action in launching a community garden. <ANS_START>1<ANS_END>
+
+[Question] I want to develop a sustainable packaging solution for a small beverage company. How should I research, prototype, and launch the new packaging?
+[Answer] **Reasoning Chain for Generating a 6–8 Sentence Plan**
+
+1. **Extract the Core Goal**  
+   - Read the user’s statement: “I want to develop a sustainable packaging solution for a small beverage company.”  
+   - Identify the three explicit phases requested: research, prototype, and launch.  
+   - Note that the goal is to create a practical, market‑ready packaging design that aligns with sustainability principles.
+
+2. **Identify Constraints and Context**  
+   - Small beverage company ⇒ limited budget, limited production volume, tight timeline.  
+   - Sustainability ⇒ environmental impact metrics, regulatory compliance (food‑contact safety), end‑of‑life recyclability or compostability.  
+   - Market acceptance ⇒ consumer perception, brand image, packaging usability.
+
+3. **Gather Available Resources**  
+   - Scan the `<Resources>` block for labels that can be referenced.  
+   - If the block is empty, prepare to state “No resources provided.”  
+   - Recognize that resources might include design templates, market research data, prototyping equipment, regulatory guidelines, etc.
+
+4. **Define High‑Level Milestones (Sub‑Goals)**  
+   - Translate the three phases into 5 actionable sub‑goals that cover the full lifecycle:  
+     1. Market & material research  
+     2. Design & material selection  
+     3. Prototype creation  
+     4. Pilot testing & validation  
+     5. Production scaling & launch  
+
+5. **Derive Tasks for Each Sub‑Goal**  
+   - For each milestone, list 1–3 concise, action‑oriented verbs: e.g., “Survey,” “Select,” “Fabricate.”  
+   - Ensure verbs reflect tangible steps and avoid jargon that might exceed the sentence limit.
+
+6. **Map Resources to Sub‑Goals**  
+   - For every sub‑goal, list the labels from the `<Resources>` block that are directly relevant.  
+   - If none apply, explicitly write “No resources provided.”  
+   - Avoid inventing or translating resources; use the exact labels as given.
+
+7. **Set Realistic Timelines**  
+   - Estimate durations in days, weeks, or months that are plausible for a small company.  
+   - Keep each timeline concise (e.g., “4 weeks” or “3 months”).  
+   - Ensure cumulative timelines fit within the 6–8 sentence total without exceeding the limit.
+
+8. **Identify Risks and Mitigations**  
+   - For each sub‑goal, list at least one risk that is realistic (e.g., “Material cost spike”).  
+   - Provide Likelihood and Impact descriptors (e.g., Medium, High).  
+   - Offer a concrete mitigation step (e.g., “Secure a fixed‑price contract with two suppliers”).  
+   - Use a single dash “–” per risk line and follow the exact formatting required.
+
+9. **Define a Clear Success Metric**  
+   - Choose one measurable indicator per sub‑goal (e.g., “Reduction in CO₂ emissions by 20%”).  
+   - Avoid vague or multi‑metric statements.  
+   - Ensure the metric directly reflects the sub‑goal’s objective.
+
+10. **Compose the Plan Within Constraints**  
+    - Begin with the goal line: “Main Goal: “I want to develop a sustainable packaging solution for a small beverage company.””  
+    - Include 2–5 numbered sub‑goals (we choose 5).  
+    - Keep the total number of sentences (goal line + sub‑goal sections) between 6 and 8.  
+    - Each sub‑goal section counts as one sentence, but internal bullet points do not add to the sentence count.  
+    - Wrap the entire output exactly between `<ANS_START>` and `<ANS_END>` with no extra whitespace or tags.
+
+11. **Validate Formatting Against the Template**  
+    - Check that each sub‑goal follows the exact order: Sub‑Goal line, Tasks, Resources, Timeline, Risks, Success Metric.  
+    - Confirm that dashes, bullet points, and indentation match the example.  
+    - Ensure no Markdown, additional bullets, or alternate dash types appear.
+
+12. **Finalize Output**  
+    - Produce the final text block, starting immediately with `<ANS_START>` and ending with `<ANS_END>`.  
+    - Double‑check that no extraneous text, comments, or explanations are included outside the wrapper.  
+    - Verify that the plan satisfies all constraints (sentence count, sub‑goal number, resource usage, risk format, success metric). <ANS_START>[invalid]<ANS_END>
+
+[Question] I need to plan a fundraising gala for a non‑profit arts organization. What are the key steps to ensure a successful event?
+[Answer] **Reasoning chain for constructing the fundraising gala plan**
+
+1. **Parse the user request**  
+   - The user asks for a plan to “need to plan a fundraising gala for a non‑profit arts organization.”  
+   - The goal is therefore: *“Plan a fundraising gala for a non‑profit arts organization.”*  
+   - No `<Resources>` block is supplied, so we will treat the resources list as empty.
+
+2. **Determine plan constraints**  
+   - The plan must be 6–8 sentences total, including the goal line.  
+   - Sub‑goals must be numbered 1–5, with 2–5 sub‑goals overall.  
+   - Each sub‑goal must contain: a heading, 3 verb‑based tasks, a resources line (which will be “No resources provided.”), a timeline, 1–2 risk items, and a single success metric.  
+   - All formatting must follow the exact template specified in the prompt.
+
+3. **Identify logical milestones for a gala**  
+   - Core steps in any fundraising gala are: securing a venue, securing sponsorships, creating the program, promoting/selling tickets, and executing/closing the event.  
+   - These naturally translate into 5 sub‑goals:  
+     1. Secure venue and date  
+     2. Secure sponsorships and funding  
+     3. Develop program and entertainment  
+     4. Promote event and sell tickets  
+     5. Execute event and conduct post‑event evaluation
+
+4. **Draft tasks for each sub‑goal**  
+   - Keep each task concise and action‑oriented, using verbs: e.g., “Identify”, “Negotiate”, “Confirm”.  
+   - Example: For sub‑goal 1: 1) Identify suitable venues, 2) Negotiate contracts, 3) Confirm availability.
+
+5. **Assign resources**  
+   - Since the resources block is empty, each sub‑goal will have the line: “No resources provided.”
+
+6. **Set realistic timelines**  
+   - Estimate durations based on typical gala planning cycles: 4–6 weeks for venue, 6–8 weeks for sponsorships, 4 weeks for program, 6 weeks for promotion, 1 week for execution.
+
+7. **Enumerate risks**  
+   - For each sub‑goal, pick 1–2 plausible risks, assign Likelihood and Impact adjectives, and propose concrete mitigation steps (e.g., “Identify two backup venues”).  
+   - Ensure each risk line uses a single dash and follows the required structure.
+
+8. **Define a single success metric per sub‑goal**  
+   - Example metrics: signed lease, number of sponsors secured, program approved, tickets sold, attendance achieved.
+
+9. **Verify sentence count**  
+   - The goal line counts as one sentence.  
+   - Each sub‑goal block is considered one sentence because the instruction treats the entire block as a single sentence for counting purposes.  
+   - With 5 sub‑goals plus the goal line, the total is 6 sentences, meeting the 6–8 sentence requirement.
+
+10. **Assemble the final plan**  
+    - Wrap the entire text between `<ANS_START>` and `<ANS_END>`.  
+    - Ensure no additional whitespace, newlines, or tags outside the wrapper.  
+    - Use the exact formatting for headings, bullets, dashes, and labels as specified.  
+    - Double‑check that every required field is present and correctly formatted.
+
+By following these reasoning steps, we can produce a compliant, concise, and actionable plan that satisfies all constraints of the task. <ANS_START>[invalid]<ANS_END>
+
+[Question] I’m planning to create a personal finance app targeted at millennials. What steps should I follow to design, develop, and launch the app?
+[Answer] **Reasoning Chain**
+
+1. **Parse the Goal**  
+   - Extract the core objective: “create a personal finance app targeted at millennials.”  
+   - Identify the three key phases implied in the question: design, develop, and launch.
+
+2. **Determine High‑Level Milestones**  
+   - Break the project into 5 logical sub‑goals that map to the phases and necessary pre‑steps:  
+     1. Market research & persona creation.  
+     2. Feature prioritization & roadmap.  
+     3. UI/UX design.  
+     4. Development & testing.  
+     5. Launch & marketing.
+
+3. **Define Tasks for Each Sub‑Goal**  
+   - For each sub‑goal, list exactly three action‑oriented verbs:  
+     1. Research: survey, analyze, define.  
+     2. Prioritize: list, score, finalize.  
+     3. Design: prototype, iterate, finalize.  
+     4. Develop: code, test, iterate.  
+     5. Launch: publish, promote, monitor.
+
+4. **Handle Resources**  
+   - The `<Resources>` block is empty, so the instruction dictates writing “No resources provided.” for the Resources line of every sub‑goal.
+
+5. **Set Timelines**  
+   - Assign realistic durations that reflect typical project pacing: 4 weeks, 6 weeks, 8 weeks, 12 weeks, 4 weeks respectively.
+
+6. **Identify Risks and Mitigations**  
+   - For each sub‑goal, craft one primary risk with Likelihood/Impact and a concrete mitigation step.  
+   - Optionally add a second risk where appropriate (e.g., launch risk may include competition).  
+   - Ensure each risk line follows the exact dash format specified.
+
+7. **Choose Success Metrics**  
+   - Provide a single, measurable indicator per sub‑goal: number of signed surveys, number of features approved, prototype usability score, percentage of bugs resolved, number of app downloads.
+
+8. **Count Sentences**  
+   - Confirm the plan contains 6 sentences: one for the goal and one for each of the five sub‑goals, satisfying the 6–8 sentence requirement.
+
+9. **Format the Output**  
+   - Wrap the entire plan between `<ANS_START>` and `<ANS_END>` with no extra whitespace or tags.  
+   - Ensure every line adheres exactly to the template: numbered sub‑goal, heading, bullet list of Tasks, Resources, Timeline, Risks, Success Metric.  
+
+By following these steps, the final output will meet all formatting, content, and quantity rules specified in the task description. <ANS_START>[invalid]<ANS_END>
+
+
+At the end, wrap only your final option between <ANS_START> and <ANS_END> tags
+Keywords: [Intent]: strategic planning, concise execution, structured approach, risk mitigation, resource awareness

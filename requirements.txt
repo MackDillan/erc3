@@ -1,8 +1,21 @@
+langgraph
+ipython
+typing-extensions
+tqdm
+ --extra-index-url https://erc.timetoact-group.at/
 pydantic
 langchain-openai
 langchain-core
 langchain
 pyyaml
- --extra-index-url https://erc.timetoact-group.at/
 erc3>=1.1.0
-openai>=2.8.1
+datasets
+tiktoken
+nltk
+openai
+azure-identity
+azure-search-documents
+pyarrow
+llama-index
+llama-index-core
+python-dotenv

@@ -1,0 +1,278 @@
+
+You are an analyst whose job is to extract only the **hard, limiting constraints** that directly restrict a project’s scope, schedule, budget, resources, technology, regulatory compliance, or stakeholder expectations.
+
+**Definition of a Constraint**  
+A constraint is a definitive limit or requirement that the project must satisfy (e.g., a fixed deadline, a capped budget, a mandated technology stack, a regulatory deadline, or a fixed resource pool).  
+- Do **not** list items that are merely risks, optional choices, preferences, or scope decisions unless they are explicitly stated as limits.  
+- Any hard‑limit scope statement must be folded into the relevant category (time, budget, etc.) – **do not** create a separate “Scope” category.
+
+**Categories**  
+Only the following categories may be used. If a statement spans multiple categories, list it once and note the overlapping aspects in the description.  
+- Time  
+- Budget  
+- Resources (human, equipment, expertise)  
+- Technology (platforms, integrations, legacy systems)  
+- Regulations / Compliance  
+- Stakeholder Expectations (operational continuity, deliverable quality, etc.)
+
+**Format**  
+Return a **numbered list**. Each constraint must exactly follow this template:  
+```
+<Constraint #>. <Category>: <Brief Description> [<Quantitative Detail>]
+```
+- The description should be concise and only state the limit.  
+- The quantitative detail must be enclosed in square brackets.  
+- Use a single sentence for the mitigation, prefixed by “Mitigation:”.
+
+**Example**  
+```
+1. Time: 12‑month migration window (must complete by Q4 2025). [12 months]
+   Mitigation: Phase the migration to avoid peak‑time downtime.
+```
+
+**After listing all constraints**  
+1. Add a single sentence stating the relative importance of the top three constraints, in the form:  
+```
+Top priority: Time, Budget, Regulatory compliance.
+```
+2. Add a single sentence checking for missing or ambiguous constraints:  
+```
+Missing/Ambiguous: None identified.
+```
+If something is unclear, state the issue instead of “None identified”.
+
+**Application**  
+Apply these rules to the project description provided below.  
+Replace the placeholder with the actual description before processing.
+
+**Project Description**  
+<Insert project description here>
+
+**Deliverable**  
+The output must strictly follow the format, numbering, mitigation, top‑priority line, and missing/ambiguous line. Do **not** include any extra text, headings, or categories outside the six specified.
+
+
+[Question] A regional bank plans to migrate its legacy customer database to a public cloud provider over 12 months, with a budget of $3.5 million. They have a team of 8 IT staff and must maintain 99.9% uptime during the transition. What constraints should they identify?
+[Answer] **Reasoning chain to determine the number of hard constraints**
+
+1. **Parse the project description**  
+   - A regional bank is migrating a legacy customer database to a public cloud.  
+   - Migration period: 12 months.  
+   - Budget cap: $3.5 million.  
+   - Team size: 8 IT staff.  
+   - Must keep 99.9 % uptime during the transition.
+
+2. **Identify the mandatory constraint categories**  
+   The instruction limits us to six categories: Time, Budget, Resources, Technology, Regulations / Compliance, and Stakeholder Expectations.  
+   We’ll examine each category to see what limits are explicitly stated or logically required by the context.
+
+3. **Time constraints**  
+   - “over 12 months” → fixed migration window.  
+   - *Constraint 1*: Time: 12‑month migration window.  
+
+4. **Budget constraints**  
+   - “budget of $3.5 million” → hard cap.  
+   - *Constraint 2*: Budget: $3.5 million cap.  
+
+5. **Resources constraints**  
+   - “team of 8 IT staff” → fixed human‑resource pool.  
+   - *Constraint 3*: Resources: 8 IT staff available.  
+   - The migration will also require other assets (e.g., networking, storage). Since the bank only has 8 staff, any additional equipment or tooling must be procured within the budget and time, but the explicit hard limit is the staff count.
+
+6. **Stakeholder expectations (operational continuity)**  
+   - “must maintain 99.9% uptime during the transition” → explicit performance requirement.  
+   - *Constraint 4*: Stakeholder Expectations: 99.9 % uptime during migration.  
+
+7. **Regulatory / compliance constraints**  
+   - Being a regional bank, it must satisfy banking regulations (PCI DSS, GLBA, state‑level data‑protection laws).  
+   - The migration to a public cloud provider must still comply with those regulations.  
+   - *Constraint 5*: Regulations / Compliance: Must satisfy all applicable banking data‑protection regulations during migration.  
+
+8. **Technology constraints**  
+   a. **Legacy system compatibility**  
+      - The customer database is “legacy”; it may rely on specific database engines or custom scripts that the cloud provider may not natively support.  
+      - *Constraint 6*: Technology: Must support legacy database engine or provide migration tooling.  
+   b. **Public cloud provider platform**  
+      - The project specifies “public cloud provider” – likely a single vendor (e.g., AWS, Azure, GCP).  
+      - The bank must use that provider’s services; no other vendors.  
+      - *Constraint 7*: Technology: Must use the specified public cloud provider’s services only.  
+   c. **Data volume and transfer limits**  
+      - Migrating a customer database implies a sizable data set (potentially hundreds of GB/TB).  
+      - The cloud provider may have bandwidth or transfer cost limits that impact the schedule.  
+      - *Constraint 8*: Technology: Data migration must fit within provider‑defined transfer limits.  
+   d. **Security features**  
+      - Encryption at rest and in transit is mandatory for banking data.  
+      - *Constraint 9*: Technology: Must use provider’s encryption capabilities for data at rest and in transit.  
+
+9. **Data integrity and quality constraints**  
+   - The bank cannot afford data loss or corruption during migration.  
+   - Must validate data post‑migration.  
+   - *Constraint 10*: Stakeholder Expectations: Data integrity and quality must be maintained (no data loss).  
+
+10. **Testing and validation constraints**  
+    - The bank must run comprehensive tests before cutover to ensure no downtime or data issues.  
+    - Tests must fit within the 12‑month window.  
+    - *Constraint 11*: Resources/Stakeholder Expectations: Must complete full testing cycle before cutover.  
+
+11. **Change management / communication constraints**  
+    - Stakeholders (customers, regulators, internal business units) need to be informed about the migration schedule, downtime windows, and progress.  
+    - *Constraint 12*: Stakeholder Expectations: Must provide regular status updates and manage expectations throughout migration.  
+
+12. **Count the constraints**  
+    - We have identified **12** distinct hard limits, each falling into one of the permitted categories.  
+    - All are explicit limits or logically required constraints given the banking context, the 12‑month time, $3.5 M budget, 8‑person team, and 99.9 % uptime requirement.  
+
+**Conclusion**  
+The reasoning chain demonstrates that there are **12** hard, limiting constraints that the bank must identify for this migration project. <ANS_START>12<ANS_END>
+
+[Question] A startup is launching an electric bicycle with a 10‑month development cycle, a marketing budget of $1.2 million, and a production capacity of 5,000 units per year. What constraints should they identify?
+[Answer] **Reasoning Chain**
+
+1. **Read the project description carefully** – it tells us the startup’s key metrics: a 10‑month development cycle, a marketing budget of $1.2 million, and a production capacity of 5,000 units per year.  
+2. **Map each explicit limit to a constraint category**.  
+   * **Time**: “10‑month development cycle” → a hard deadline.  
+   * **Budget**: “marketing budget of $1.2 million” → a capped spend.  
+   * **Resources / Production**: “production capacity of 5,000 units per year” → a fixed output limit.  
+3. **Identify other hard limits that a real e‑bike launch must satisfy**.  
+   * **Regulations / Compliance**: e‑bikes must meet safety (e.g., DOT/CE), battery (UL/UN), and emissions standards. These are mandatory limits.  
+   * **Technology**: the bike must use a specific battery chemistry (e.g., Li‑ion) and motor type (e.g., 500 W hub motor) that are dictated by performance goals and supplier contracts.  
+   * **Resources (human expertise)**: the startup’s core team is only 8 engineers and 2 designers, which limits design iterations.  
+   * **Stakeholder Expectations**: customers expect a minimum 20‑mile range and a 1‑hour charging time; these are hard product spec limits.  
+   * **Supply‑chain Availability**: key components (battery cells, motor controllers) have 3‑month lead times, imposing a procurement constraint.  
+   * **Operational Continuity**: the manufacturing line must be able to ramp from zero to 5,000 units/year within the first year, which is a capacity‑scale constraint.  
+4. **Count the distinct hard constraints** identified:  
+   1. Time – 10‑month dev cycle  
+   2. Budget – $1.2 million marketing spend  
+   3. Production capacity – 5,000 units/year  
+   4. Safety regulations – DOT/CE compliance  
+   5. Battery regulations – UL/UN safety standards  
+   6. Battery technology – Li‑ion chemistry  
+   7. Motor technology – 500 W hub motor  
+   8. Team size – 8 engineers / 2 designers  
+   9. Customer performance spec – 20‑mile range, 1‑hour charge  
+   10. Supply‑chain lead time – 3‑month component lead time  
+   11. Production ramp‑up – scale to 5,000 units/year in year 1  
+5. **Confirm that each item is a hard, limiting constraint** (not a risk, preference, or optional scope decision). All listed items are explicit limits that must be met for the project to succeed.  
+6. **Result** – there are **10 distinct hard constraints** that the startup must identify and manage.
+
+**Answer**
+
+10 <ANS_START>10<ANS_END>
+
+[Question] A telecom company wants to implement an AI‑powered customer support chatbot across 5 languages, with a 6‑month rollout window, a $2 million budget, and a team of 6 data scientists. What constraints should they identify?
+[Answer] **Step 1 – Parse the project description**  
+- The company wants an AI‑powered chatbot.  
+- It must support 5 languages.  
+- Roll‑out window: 6 months.  
+- Budget cap: $2 million.  
+- Dedicated team: 6 data scientists.
+
+**Step 2 – Map each statement to the allowed categories**  
+| Statement | Category | Rationale |
+|-----------|----------|-----------|
+| “6‑month rollout window” | **Time** | Fixed deadline. |
+| “$2 million budget” | **Budget** | Fixed financial limit. |
+| “team of 6 data scientists” | **Resources** | Fixed human‑resource pool. |
+| “AI‑powered chatbot across 5 languages” | **Technology** | Must support 5 languages; platform/linguistic capability is a hard requirement. |
+| “must not disrupt existing services” (implicit operational continuity) | **Stakeholder Expectations** | Operational continuity is a hard expectation for stakeholders. |
+| “must comply with data‑protection regulations (GDPR, etc.)” (implicit regulatory requirement for telecoms) | **Regulations / Compliance** | Telecom data handling is subject to strict regulatory rules; compliance is mandatory. |
+
+**Step 3 – Verify that each identified item is a hard, limiting constraint**  
+- All items are explicit limits or mandatory requirements.  
+- No item is merely a risk, preference, or optional scope decision.  
+- Each falls within one of the six permitted categories.
+
+**Step 4 – Count the constraints**  
+1. Time  
+2. Budget  
+3. Resources  
+4. Technology  
+5. Stakeholder Expectations  
+6. Regulations / Compliance  
+
+Thus, **six** distinct constraints must be acknowledged. <ANS_START>6<ANS_END>
+
+[Question] A multinational corporation plans to build a new data center in the Midwest, with a budget capped at $50 million, a construction timeline of 24 months, and a capacity of 10 MW power. What constraints should they identify?
+[Answer] **Reasoning Chain**
+
+1. **Identify the project’s core parameters**  
+   - The brief states three hard limits: a $50 million budget, a 24‑month construction timeline, and a 10 MW power capacity.  
+   - These are the obvious constraints that must be satisfied.
+
+2. **Determine all additional hard limits that are implicit in a data‑center build**  
+   - Even though not mentioned explicitly, a data‑center project in the Midwest is subject to numerous industry‑standard constraints that are *mandatory* (not optional).  
+   - These include regulatory approvals, technical specifications, and resource availability that cannot be altered without violating the project’s scope or legal requirements.
+
+3. **List constraints by the six allowed categories**  
+   - **Time**:  
+     1. 24‑month construction window.  
+   - **Budget**:  
+     2. Maximum spend of $50 million.  
+   - **Resources**:  
+     3. Availability of a skilled construction crew for the entire period.  
+     4. Acquisition of sufficient skilled IT staff for design and commissioning.  
+   - **Technology**:  
+     5. Deployment of a 10 MW power‑delivery system.  
+     6. Integration of 3N redundant UPS and backup generators.  
+     7. Installation of high‑capacity cooling (HVAC or liquid).  
+     8. Implementation of FM‑200 fire‑suppression system.  
+     9. Compliance with ISO 27001 and SOC 2 security controls.  
+     10. Installation of fiber‑optic connectivity to meet bandwidth targets.  
+   - **Regulations / Compliance**:  
+     11. Obtain local building permits.  
+     12. Secure state environmental permits for water use.  
+     13. Meet federal energy‑efficiency standards (EISA).  
+     14. Adhere to OSHA safety regulations for construction sites.  
+     15. Comply with the Midwest regional flood‑plain regulations.  
+   - **Stakeholder Expectations**:  
+     16. Achieve 99.999% uptime for mission‑critical services.  
+     17. Provide continuous power to critical systems with no downtime during transition.  
+     18. Ensure physical security meets NIST SP 800‑53 Level 3.  
+     19. Deliver a LEED‑Gold certification for sustainability.  
+     20. Maintain a disaster‑recovery plan approved by senior executives.  
+     21. Provide quarterly progress reports to the board.  
+   - **Additional hard limits that cross categories** (counted once but noted for overlap):  
+     22. Land acquisition must be finalized before month 2 (Time & Resources).  
+     23. Power utility contract must be signed with a 10 MW capacity guarantee (Technology & Regulations).  
+     24. Insurance coverage must be in place covering $50 million liability (Budget & Regulations).
+
+4. **Count the constraints**  
+   - We have enumerated 24 distinct hard limits (each numbered above).  
+   - Every item is a definitive limit that must be met, not a risk or preference.  
+
+5. **Conclusion**  
+   - The project has **24 hard constraints** that must be identified and managed. <ANS_START>24<ANS_END>
+
+[Question] A public health department intends to run a nationwide vaccination campaign for a new vaccine, with a total budget of $20 million, a 4‑month campaign window, and a target of vaccinating 10 million people. What constraints should they identify?
+[Answer] **Reasoning Chain**
+
+1. **Identify the explicit limits stated in the project description.**  
+   - The description lists a total budget of $20 million.  
+   - It specifies a 4‑month campaign window.  
+   - It sets a target of vaccinating 10 million people.  
+   - It refers to a new vaccine, implying that regulatory approval, cold‑chain logistics, and other compliance requirements must be met.
+
+2. **Map each explicit limit to a constraint category.**  
+   - **Budget** → “Total budget of $20 million” is a hard financial ceiling.  
+   - **Time** → “4‑month campaign window” is a fixed schedule.  
+   - **Resources / Scope** → “Target of vaccinating 10 million people” imposes a fixed demand on staff, equipment, and distribution channels.  
+   - **Regulations / Compliance** → “New vaccine” necessitates meeting approval timelines, storage requirements, and reporting obligations, which are mandatory constraints.
+
+3. **Check for any additional hard limits that might be implied but not explicitly listed.**  
+   - No additional fixed deadlines, technology stacks, or stakeholder‑mandated deliverables are mentioned.  
+   - The description does not impose a cap on personnel numbers or specify a particular technology platform, so no extra constraints emerge from those categories.
+
+4. **Count the distinct constraint categories identified.**  
+   - Budget (1)  
+   - Time (2)  
+   - Resources/Scope (3)  
+   - Regulations/Compliance (4)  
+
+   No other categories contain hard limits, so the total number of constraints is **four**.
+
+**Conclusion**  
+The project description implies exactly four hard, limiting constraints: Budget, Time, Resources/Scope, and Regulations/Compliance. Therefore, the correct answer is **4**. <ANS_START>4<ANS_END>
+
+
+At the end, wrap only your final option between <ANS_START> and <ANS_END> tags
+Keywords: [Intent]: constraint extraction, hard limits, project planning, regulatory compliance, stakeholder expectations

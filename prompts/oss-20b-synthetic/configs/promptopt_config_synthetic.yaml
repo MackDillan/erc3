@@ -1,0 +1,33 @@
+answer_format: At the end, wrap only your final option between <ANS_START> and <ANS_END>
+  tags
+base_instruction: Thoroughly evaluate the project objectives and identify all relevant
+  constraints that could affect its execution and success.
+few_shot_count: 5
+generate_expert_identity: true
+generate_intent_keywords: true
+generate_reasoning: true
+max_eval_batches: 6
+min_correct_count: 3
+mutate_refine_iterations: 3
+mutation_rounds: 3
+num_train_examples: 25
+prompt_technique_name: critique_n_refine
+questions_batch_size: 1
+refine_instruction: true
+refine_task_eg_iterations: 3
+seen_set_size: 25
+style_variation: 5
+task_description: 'You are an expert in identifying and defining constraints for a
+  given project or task. Your role is to analyze the objectives and requirements,
+
+  and determine the limitations that may impact the successful completion of the project.
+  These constraints can include factors such as time, budget,
+
+  resources, technology, regulations, and stakeholder expectations. Your goal is to
+  provide a clear understanding of these constraints to help guide
+
+  decision-making and planning processes.
+
+  '
+top_n: 1
+unique_model_id: oss-20b-synthetic
