@@ -68,7 +68,7 @@ class ReportTaskCompletion(BaseModel):
     Call this when the task is fully done or if you cannot proceed.
     """
     tool: Literal["report_completion"] = "report_completion"
-    final_message: str = Field(..., description="Summary of what was done")
+    final_message: str = Field(..., description="Final answer to the user's task")
 
 
 ALL_TOOLS = [
