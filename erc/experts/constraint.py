@@ -26,10 +26,12 @@ class ConstraintExpert(BaseExpert):
     def node(self, state: AgentState):
         logging.info("REVIEWER Checking...")
 
+
+        
         plan = state.get("plan", None)
-        print(plan)
-        if not plan or not plan.steps:
+        if not plan or not plan.plan.steps:
             attempts = plan.validation_attempts + 1
+            logging.warning("No plan found, auto-rejecting.")
             new_plan = Plan(
                 plan=ExecutionPlan(steps=[]),
                 is_validated=True,
@@ -39,7 +41,7 @@ class ConstraintExpert(BaseExpert):
             return state.copy(
                 plan=new_plan,
             )
-
+        
         plan_str = json.dumps(plan.model_dump(), indent=2)
 
         system_text = self.persona_provider.get_primary_persona()
@@ -50,51 +52,57 @@ class ConstraintExpert(BaseExpert):
             PLAN:\n{plan_str}
             Task: {state['input_task']}
         """
-
+        logging.info("Reviewer Prompt:")
         try:
             started = time.time()
             messages = [SystemMessage(content=system_text), HumanMessage(content=user_text)]
             usage_meta_data = UsageMetadataCallbackHandler()
 
             response = self.llm.invoke(messages, config={"callbacks": [usage_meta_data]})
-
+            logging.info(f"REVIEWER RESPONSE: {response}")
             if self.callback:
                 self.callback(usage_meta_data, started)
 
-            logging.info(f"Constraints RESPONSE: {response}")
-
+            state_copy = state.copy()
+            
+            plan_copy = plan.model_copy()
             if response is None:
-                # TODO:
-                return {
-                    "plan_is_valid": True,
-                    "review_feedback": "Auto-approved (JSON parsing failed)",
-                    "consecutive_review_failures": 0
-                }
+
+                plan_copy.review = ConstraintExpertOutput(
+                    is_valid=False,
+                    review_feedback="Auto-rejected (no response from reviewer)"
+                )
+                plan_copy.is_validated = True
+                plan_copy.validation_attempts += 1
 
             if response.is_valid:
-                logging.info("Plan Approved.")
-                new_plan = plan.model_copy()
-                new_plan.is_validated = True
-                new_plan.review = response
-                return state.copy(
-                    plan=new_plan,
-                )
+                plan_copy.review = response
+                plan_copy.is_validated = True
+                plan_copy.validation_attempts += 1
+
             else:
-                logging.warn(f"Plan Rejected: {response.review_feedback}")
-                # TODO:
-                return {
-                    "plan_is_valid": False,
-                    "review_feedback": response.review_feedback,
-                    "consecutive_review_failures": state["consecutive_review_failures"] + 1
-                }
+                logging.warning(f"Plan Rejected: {response.review_feedback}")
+                plan_copy.review = response
+                plan_copy.is_validated = True
+                plan_copy.validation_attempts += 1
+
+            state_copy["plan"] = plan_copy
+            return state_copy
 
         except Exception as e:
             logging.error(f"Reviewer Logic Crash ({e}). Allowing plan to proceed.")
-            # TODO:
-            return {
-                "plan_is_valid": True,
-                "consecutive_review_failures": 0
-            }
+
+            state_copy = state.copy()
+            plan_copy = plan.model_copy()
+            
+            plan_copy.review = ConstraintExpertOutput(
+                is_valid=False,
+                review_feedback=f"Auto-rejected due to error crash. {e}"
+            )
+            plan_copy.is_validated = True
+            plan_copy.validation_attempts += 1
+            state_copy["plan"] = plan_copy
+            return state_copy
 
 
 if __name__ == "__main__":
@@ -130,12 +138,15 @@ if __name__ == "__main__":
 
     state = AgentState(
         input_task="Count characters is world raspberry",
-        plan=ExecutionPlan(steps=[PlanStep(tool_name='report_completion',
+        plan=Plan(
+            plan=ExecutionPlan(steps=[PlanStep(tool_name='report_completion',
                                            arguments={'final_message': "The word 'raspberry' has 9 characters."},
                                            reasoning="The task is to count the characters in the word 'raspberry', which is 9. No shopping tools are relevant.",
                                            summary='Completed the character count.')]),
         is_validated=False,
         is_valid=False,
         validation_attempts=0,
+        review=None,
+        )
     )
     c.node(state)
