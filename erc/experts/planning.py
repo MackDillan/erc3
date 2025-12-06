@@ -2,6 +2,7 @@ import logging
 import sys
 import time
 
+import yaml
 from langchain_core.callbacks import UsageMetadataCallbackHandler
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_openai import ChatOpenAI
@@ -79,12 +80,16 @@ if __name__ == "__main__":
         ]
     )
 
+    with open("../../credentials.yml", "r") as f:
+        config = yaml.safe_load(f)
+
+    base_url = config["HOST_URL"]
+
     llm = ChatOpenAI(
         model="oss-20b",
-        base_url="http://localhost:8080/v1",
+        base_url=base_url,
         api_key="",
         temperature=0.0,
-        max_tokens=1000,
     )
     p = PlanningExpert(
         persona_path="../../prompts/oss-20b-synthetic-persona",

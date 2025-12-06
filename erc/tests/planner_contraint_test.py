@@ -1,6 +1,7 @@
 import logging
 import sys
 
+import yaml
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
 from langgraph.constants import END
@@ -67,6 +68,11 @@ if __name__ == "__main__":
         pass
 
 
+    with open("../../credentials.yml", "r") as f:
+        config = yaml.safe_load(f)
+
+    base_url = config["HOST_URL"]
+
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
@@ -76,7 +82,7 @@ if __name__ == "__main__":
     )
     llm = ChatOpenAI(
         model="oss-20b",
-        base_url="http://localhost:8080/v1",
+        base_url=base_url,
         api_key="",
         temperature=0.0,
         max_tokens=1000,
