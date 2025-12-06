@@ -3,6 +3,8 @@ from typing import TypedDict, Optional, List
 from pydantic import BaseModel
 
 from erc.experts.schemas import ExecutionPlan, ConstraintExpertOutput, PlanStep
+from typing import Annotated, List
+import operator
 
 
 class Plan(BaseModel):
@@ -18,4 +20,5 @@ class ExecutionTool(BaseModel):
 class AgentState(TypedDict):
     input_task: str
     plan: Optional[Plan]
-    executor: List[ExecutionTool]
+    executor: Optional[ExecutionTool]
+    messages: Annotated[List, operator.add]
